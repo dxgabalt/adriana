@@ -14,7 +14,7 @@
             /* Color de fondo más suave */
             color: #333;
         }
-
+    
         header {
             background-color: #f48fb1;
             /* Color rosa más suave */
@@ -22,108 +22,108 @@
             text-align: center;
             color: #fff;
         }
-
+    
         section {
-            max-width: 800px;
+            max-width: 100%; /* Hacemos que el contenido sea del 100% del ancho */
             margin: 20px auto;
-            padding: 30px;
+            padding: 20px; /* Reducimos el espacio interno */
             background-color: rgba(255, 255, 255, 0.9);
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
             border-radius: 20px;
             text-align: justify;
         }
-
+    
         footer {
             text-align: center;
             padding: 20px;
             background-color: #f48fb1;
             color: #fff;
         }
-
+    
         h1 {
-            font-size: 3em;
+            font-size: 2em; /* Ajustamos el tamaño de la fuente para pantallas más pequeñas */
             margin-bottom: 15px;
             color: #ffffff;
             /* Puedes cambiar el color según tu preferencia */
         }
-
+    
         h2 {
-            font-size: 2em;
+            font-size: 1.5em; /* Ajustamos el tamaño de la fuente para pantallas más pequeñas */
             color: #f48fb1;
             margin-bottom: 10px;
         }
-
+    
         p {
-            font-size: 1.2em;
+            font-size: 1em; /* Ajustamos el tamaño de la fuente para pantallas más pequeñas */
             line-height: 1.5;
         }
-
+    
         .heart {
             display: inline-block;
-            width: 25px;
-            height: 25px;
+            width: 20px; /* Ajustamos el tamaño del corazón para pantallas más pequeñas */
+            height: 20px; /* Ajustamos el tamaño del corazón para pantallas más pequeñas */
             background-color: #ff6f8a;
             /* Color más vibrante */
             transform: rotate(-45deg);
             margin: 0 5px;
         }
-
+    
         .heart::before,
         .heart::after {
             content: '';
             display: block;
-            width: 25px;
-            height: 25px;
+            width: 20px; /* Ajustamos el tamaño del corazón para pantallas más pequeñas */
+            height: 20px; /* Ajustamos el tamaño del corazón para pantallas más pequeñas */
             background-color: #ff6f8a;
             /* Color más vibrante */
             border-radius: 50%;
             position: absolute;
         }
-
+    
         .heart::before {
-            top: -12px;
+            top: -10px; /* Ajustamos la posición del corazón para pantallas más pequeñas */
             left: 0;
         }
-
+    
         .heart::after {
             top: 0;
-            left: 12px;
+            left: 10px; /* Ajustamos la posición del corazón para pantallas más pequeñas */
         }
-
+    
         .heart:hover {
             animation: beat 0.5s infinite alternate;
         }
-
+    
         @keyframes beat {
             to {
                 transform: scale(1.3);
             }
         }
-
+    
         .gallery {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
             margin-top: 20px;
         }
-
+    
         .gallery img {
-            width: 80%;
+            width: 100%; /* Hacemos que las imágenes ocupen el 100% del ancho del contenedor */
             max-width: 250px;
             border-radius: 10px;
             margin: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
-
+    
         .gallery img:hover {
             transform: scale(1.1);
         }
-
+    
         .explanation {
             margin-top: 20px;
         }
-
+    
         .love-note {
             cursor: pointer;
             position: relative;
@@ -137,39 +137,39 @@
             overflow: hidden;
             /* Para contener la explosión dentro del elemento */
         }
-
+    
         .love-explosion {
             position: absolute;
-            width: 10px;
-            height: 10px;
+            width: 5px; /* Ajustamos el tamaño de la explosión para pantallas más pequeñas */
+            height: 5px; /* Ajustamos el tamaño de la explosión para pantallas más pequeñas */
             background-color: #ff6f8a;
             /* Color más vibrante */
             opacity: 0.7;
             border-radius: 50%;
             animation: explode 0.5s ease-out;
         }
-
+    
         @keyframes explode {
             0% {
                 transform: scale(1);
             }
-
+    
             100% {
-                transform: scale(20);
+                transform: scale(10); /* Ajustamos el tamaño de la explosión para pantallas más pequeñas */
                 opacity: 0;
             }
         }
-
+    
         form {
-            margin-top: 30px;
+            margin-top: 20px; /* Ajustamos el espacio superior para pantallas más pequeñas */
             text-align: center;
         }
-
+    
         form label {
             display: block;
             margin-bottom: 10px;
         }
-
+    
         form input,
         form textarea {
             width: 100%;
@@ -177,7 +177,7 @@
             margin-bottom: 15px;
             box-sizing: border-box;
         }
-
+    
         form button {
             background-color: #f48fb1;
             /* Color rosa más suave */
@@ -187,12 +187,12 @@
             border-radius: 5px;
             cursor: pointer;
         }
-
+    
         form button:hover {
             background-color: #d84d77;
             /* Color rosa más oscuro */
         }
-
+    
         .hearts-container {
             position: fixed;
             top: 0;
@@ -203,52 +203,52 @@
             z-index: -1;
             /* Coloca el fondo de corazones detrás del contenido */
         }
-
+    
         .heart-float {
             position: absolute;
-            width: 10px;
-            height: 10px;
+            width: 5px; /* Ajustamos el tamaño del corazón flotante para pantallas más pequeñas */
+            height: 5px; /* Ajustamos el tamaño del corazón flotante para pantallas más pequeñas */
             background-color: #ff6f8a;
             /* Color más vibrante */
             opacity: 0.7;
             animation: float 2s infinite;
         }
-
+    
         @keyframes float {
-
+    
             0%,
             100% {
                 transform: translateY(0);
             }
-
+    
             50% {
-                transform: translateY(-20px);
+                transform: translateY(-10px); /* Ajustamos la distancia de flotación para pantallas más pequeñas */
             }
         }
-
-        .love-message {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: #ff6f8a; /* Color más vibrante */
-      padding: 30px;
-      border-radius: 15px;
-      color: #fff;
-      font-size: 1.8em;
-      text-align: center;
-      display: none; /* Inicialmente oculto */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      max-width: 80%;
-      line-height: 1.5;
-    }
-
     
-    .poem {
-      margin-top: 30px;
-      text-align: center;
-    }
+        .love-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ff6f8a; /* Color más vibrante */
+            padding: 20px; /* Reducimos el espacio interno */
+            border-radius: 10px; /* Reducimos el radio de la esquina para pantallas más pequeñas */
+            color: #fff;
+            font-size: 1.5em; /* Ajustamos el tamaño de la fuente para pantallas más pequeñas */
+            text-align: center;
+            display: none; /* Inicialmente oculto */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 90%; /* Reducimos el ancho máximo para pantallas más pequeñas */
+            line-height: 1.5;
+        }
+    
+        .poem {
+            margin-top: 20px; /* Ajustamos el espacio superior para pantallas más pequeñas */
+            text-align: center;
+        }
     </style>
+    
 </head>
 
 <body>
@@ -265,7 +265,7 @@
 
     <header>
         <h1>¡Bienvenida, Adriana!</h1>
-        <p>Un sitio especial para una amiga especial</p>
+        <p>Un sitio especial para una persona especial</p>
     </header>
 
     <section>
