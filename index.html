@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adriana Michelle Brenes Melendez</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fdf3f3;
+            /* Color de fondo más suave */
+            color: #333;
+        }
+
+        header {
+            background-color: #f48fb1;
+            /* Color rosa más suave */
+            padding: 30px;
+            text-align: center;
+            color: #fff;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            text-align: justify;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f48fb1;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            color: #ffffff;
+            /* Puedes cambiar el color según tu preferencia */
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #f48fb1;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+
+        .heart {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background-color: #ff6f8a;
+            /* Color más vibrante */
+            transform: rotate(-45deg);
+            margin: 0 5px;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            display: block;
+            width: 25px;
+            height: 25px;
+            background-color: #ff6f8a;
+            /* Color más vibrante */
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .heart::before {
+            top: -12px;
+            left: 0;
+        }
+
+        .heart::after {
+            top: 0;
+            left: 12px;
+        }
+
+        .heart:hover {
+            animation: beat 0.5s infinite alternate;
+        }
+
+        @keyframes beat {
+            to {
+                transform: scale(1.3);
+            }
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 80%;
+            max-width: 250px;
+            border-radius: 10px;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .explanation {
+            margin-top: 20px;
+        }
+
+        .love-note {
+            cursor: pointer;
+            position: relative;
+            display: inline-block;
+            color: #fff;
+            background-color: #ff6f8a;
+            /* Color más vibrante */
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+            overflow: hidden;
+            /* Para contener la explosión dentro del elemento */
+        }
+
+        .love-explosion {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ff6f8a;
+            /* Color más vibrante */
+            opacity: 0.7;
+            border-radius: 50%;
+            animation: explode 0.5s ease-out;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(20);
+                opacity: 0;
+            }
+        }
+
+        form {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        form button {
+            background-color: #f48fb1;
+            /* Color rosa más suave */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #d84d77;
+            /* Color rosa más oscuro */
+        }
+
+        .hearts-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            /* Coloca el fondo de corazones detrás del contenido */
+        }
+
+        .heart-float {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ff6f8a;
+            /* Color más vibrante */
+            opacity: 0.7;
+            animation: float 2s infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .love-message {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #ff6f8a; /* Color más vibrante */
+      padding: 30px;
+      border-radius: 15px;
+      color: #fff;
+      font-size: 1.8em;
+      text-align: center;
+      display: none; /* Inicialmente oculto */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 80%;
+      line-height: 1.5;
+    }
+
+    
+    .poem {
+      margin-top: 30px;
+      text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+
+    <!-- Corazones flotantes de fondo -->
+    <div class="hearts-container">
+        <!-- Puedes ajustar la cantidad y posición de los corazones cambiando el número y las coordenadas -->
+        <div class="heart-float" style="top: 10%; left: 5%;"></div>
+        <div class="heart-float" style="top: 20%; left: 80%;"></div>
+        <div class="heart-float" style="top: 40%; left: 30%;"></div>
+        <div class="heart-float" style="top: 60%; left: 70%;"></div>
+        <div class="heart-float" style="top: 80%; left: 10%;"></div>
+    </div>
+
+    <header>
+        <h1>¡Bienvenida, Adriana!</h1>
+        <p>Un sitio especial para una amiga especial</p>
+    </header>
+
+    <section>
+        <h2>Mensaje Personal</h2>
+        <p>Adriana,</p>
+        <p>Quiero expresarte lo importante que eres para mí y pedirte disculpas por lo ocurrido en el pasado, sobre todo por alejarme de ti por temor.
+            Este sitio web es un pequeño gesto para mostrarte mi cariño y aprecio.</p>
+        <p>Espero que disfrutes de lo que he preparado para ti. Siempre valoro nuestro pasado y
+            estoy agradecido por ello.</p>
+        <p>¡<span class="heart"></span>!</p>
+    </section>
+
+    <section>
+        <h2>Galería de Recuerdos</h2>
+        <div class="gallery">
+            <img src="imagen1.jpg" alt="Recuerdo 1">
+            <img src="imagen2.jpg" alt="Recuerdo 2">
+            <img src="imagen3.jpg" alt="Recuerdo 3">
+            <!-- Agrega más imágenes según sea necesario -->
+        </div>
+        <p class="explanation">He decidido poner fotos tuyas en esta galería. ¡Espero que te gusten y que pronto podamos
+            llenarla con nuevos y hermosos recuerdos juntos!</p>
+    </section>
+
+    <!-- Elemento con nota de cariño que explota al hacer clic -->
+    <div class="love-note" onclick="showLoveNote(this)">
+        ¡Haz clic aquí para una sorpresa de cariño!
+        <div class="love-explosion"></div>
+    </div>
+
+    <!-- Mensaje de amor personalizado -->
+    <div class="love-message" id="loveMessage">Adriana, te quiero mucho y mando un fuerte abrazo.</div>
+
+  <!-- Sección del video de YouTube -->
+  <section>
+    <h2>Una Canción Especial</h2>
+    <p>Querida Adriana,</p>
+    <p>Quiero compartir contigo una canción que tanto me gusta y recuerda a ti:</p>
+    <iframe width="420" height="300" src="https://www.youtube.com/embed/o6miA8_8pmc?si=3MIB_ZIevTwDHqr7" title="YouTube video player" frameborder="50" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    <p>Espero que disfrutes escuchándola. ¡Te quiero!</p>
+  </section>
+
+    <!-- Poema -->
+    <div class="poem">
+        <h2>Poema para Adriana</h2>
+        <p>En cada abrazo, un capítulo se escribe,</p>
+        <p>Contigo, el cariño florece y revive.</p>
+        <p>Con risas y secretos, nuestro camino.</p>
+        <p>En cada abrazo, en cada canción,</p>
+        <p>Contigo, Adriana, es mi elección.</p>
+        <p>Te quiero con todo mi ser,</p>
+        <p>En este poema lo dejo entender.</p>
+      </div>
+
+  <footer>
+    <p>Con cariño, Edxel.</p>
+  </footer>
+
+
+  <script>
+    function showActivityResult() {
+      const userInput = document.getElementById('activityInput').value;
+      const resultContainer = document.getElementById('activityResult');
+      resultContainer.textContent = `¡Tu momento favorito es: "${userInput}"! Qué hermoso compartir estos momentos contigo.`;
+    }
+
+    function showLoveNote(element) {
+      // Crear la explosión de amor al hacer clic
+      const loveExplosion = document.createElement('div');
+      loveExplosion.classList.add('love-explosion');
+      element.appendChild(loveExplosion);
+
+      // Añadir clase de animación
+      loveExplosion.classList.add('love-explosion-active');
+
+      // Mostrar mensaje después de la animación
+      const loveMessage = document.getElementById('loveMessage');
+      loveMessage.innerHTML = "Adriana, te quiero mucho y mando un fuerte abrazo.";
+
+      // Estilizar la nota
+      loveMessage.style.display = 'block';
+      loveMessage.style.backgroundColor = '#ff6f8a'; /* Color más vibrante */
+      loveMessage.style.padding = '30px';
+      loveMessage.style.borderRadius = '15px';
+      loveMessage.style.color = '#fff';
+      loveMessage.style.fontSize = '1.8em';
+      loveMessage.style.textAlign = 'center';
+      loveMessage.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+      loveMessage.style.maxWidth = '80%';
+      loveMessage.style.lineHeight = '1.5';
+
+      // Eliminar la explosión y ocultar el mensaje después de un tiempo
+      setTimeout(() => {
+        loveExplosion.remove();
+        loveMessage.style.display = 'none';
+      }, 3000); // 3000 milisegundos, ajusta según tu preferencia
+    }
+  </script>
+
+</body>
+
+</html>
